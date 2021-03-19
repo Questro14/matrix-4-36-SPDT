@@ -14,12 +14,12 @@ void Switch::Init(void) {
   }
   pinMode(SPDTpower, OUTPUT);
   
-  UpdateSwitchSPDT();
-  UpdateSwitch436();
+  //UpdateSwitchSPDT();
+  //UpdateSwitch436();
   
-  for (char i = 1; i < MaxSwitch + 1; i++) {
+ /* for (char i = 1; i < MaxSwitch + 1; i++) {
     SwitchPower(i);
-  }
+  }*/
 }
 
 void Switch::UpdateSwitchSPDT(void) {

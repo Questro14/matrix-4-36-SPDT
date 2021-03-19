@@ -26,7 +26,7 @@ Dip dip(pin_dip1, pin_dip2, pin_dip3, pin_dip4);
 void setup() {
   dip.init();
   my_sw.Init();
-  Serial.begin(115200);
+  Serial.begin(2000000);
   addressBoard = dip.getAddres(); // запись адреса платы
 }
 
@@ -35,6 +35,12 @@ void loop() {
 
   if (addressBoard >= 0 && addressBoard <= 6 ) {
     //платы 4-36
+    if(addressBoard == 0){
+      digitalWrite(12, HIGH);
+      delay(100);
+      digitalWrite(13, HIGH);
+      
+      }
     while (1) {
       // Receive data
       if (Serial.available() > 0) {
@@ -172,14 +178,4 @@ void loop() {
       }
     }
   }
-  else {
-    while (1) {
-      digitalWrite(13, HIGH);
-      delay(1000);
-      digitalWrite(13, LOW);
-      delay(1000);
-    }
-
-  }
-
 }
